@@ -27,3 +27,4 @@ ec2_instances.tf Contains the deployment of the EC2 instances necessary to run K
 Already Existing resources: Lambda layer for the Lambda Consumer, Lambda Consumer and Lambda Producer, S3 Bucket, VPC and Subnets (private and Publics), Internet Gateway, route tables (which are updated in the "terra_3_nat.tf" file) and Keypairs.
 
 
+Only few changes should be made by hand, like updating the Security groups, bastion host should outbound any traffic to anywhere, private_host should allow traffic from the MSK SG and the MSK SG should ALLOW TRAFFIC from the private_host SG and form itself. And FINALLY, adding the MSK SG to the Lambda_producer.
